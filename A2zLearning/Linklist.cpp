@@ -22,13 +22,19 @@ void append(int data){
     }
 
 }
-
+void print(){
+    node *currentNode = root;
+    while(currentNode != NULL){
+        cout<<currentNode->data<<endl;
+        currentNode = currentNode->next;
+    }
+}
 int main(){
     cout<<"Append Data to Link List"<<endl;
     for(int i=1;i<=10;i+=2){
         append(i);
     }
     cout<<"Print All Data From Link List"<<endl;
-    //print();
+    print();
     return 0;
 }
