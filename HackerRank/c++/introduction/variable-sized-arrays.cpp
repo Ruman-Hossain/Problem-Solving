@@ -8,10 +8,12 @@ int main() {
     while(tarr--){
         int n,input;
         cin>>n;
-        v.emplace_back();   //Initialize Empty Sub Vector
+        v.emplace_back();   //Initialize Empty Sub Vector  Similar to v.push_back() or v.resize(n)
         for(int j=0;j<n;j++){
             cin>>input;
             v.back().push_back(input);  //Insert data to Sub Vector
+            //v[i].push_back(input);    // Same to v.back().push_back(input);
+            //v[i][j] = input;    /*WRONG PROCESS cause vector index is not created yet*/ 
         }
         i++;
     }
