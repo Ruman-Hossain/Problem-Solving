@@ -56,14 +56,21 @@ void free_singly_linked_list(SinglyLinkedListNode* node) {
  *
  */
 SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
-    SinglyLinkedListNode *newNode = new SinglyLinkedListNode(data); 
-    SinglyLinkedListNode *current = head;
+    //:::::::::::NORMAL SOLUTION:::::::::::://
+    // SinglyLinkedListNode *newNode = new SinglyLinkedListNode(data); 
+    // SinglyLinkedListNode *current = head;
+    // if(head == nullptr)
+    //     return newNode;
+    // while(current->next != nullptr){
+    //     current = current->next;
+    // }
+    // current->next = newNode;
+    // return head;
+    
+    //:::::::::RECURSIVE SOLUTION::::::::::://
     if(head == nullptr)
-        return newNode;
-    while(current->next != nullptr){
-        current = current->next;
-    }
-    current->next = newNode;
+        return new SinglyLinkedListNode(data);
+    head->next = insertNodeAtTail(head->next,data);
     return head;
 }
 
